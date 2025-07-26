@@ -1,0 +1,43 @@
+.search-results {
+  padding: 20px;
+  font-family: "Roboto", "Arial", sans-serif;
+}
+
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-column-gap: 16px;
+  grid-row-gap: 30px;
+  margin-top: 15px;
+  list-style: none;
+}
+
+.search-card {
+  list-style: none;
+  text-decoration: none;
+  color: inherit;
+}
+
+.search-card img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.search-card h2 {
+  color: #000;
+  font-weight: 600;
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+.search-card h3 {
+  color: #555;
+  font-weight: 600;
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+.search-card p {
+  font-size: 14px;
+}
+

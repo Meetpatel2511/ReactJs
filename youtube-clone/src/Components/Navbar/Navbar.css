@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+nav.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 2%;
+  background-color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  flex-wrap: nowrap;
+  gap: 10px;
+}
+
+.nav-left,
+.middle,
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* === LEFT === */
+.menu_icon {
+  width: 24px;
+  cursor: pointer;
+}
+
+.logo {
+  width: 120px;
+}
+
+/* === MIDDLE === */
+.middle {
+  flex: 1;
+  justify-content: center;
+}
+
+.search-box button{
+  border: none;
+  background-color: #f9f9f9;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  padding: 6px 12px;
+  background-color: #f9f9f9;
+  max-width: 500px;
+  width: 100%;
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+  background: transparent;
+  flex: 1;
+  padding: 6px;
+  font-size: 16px;
+  min-width: 100px;
+}
+
+.search-box img {
+  width: 18px;
+  cursor: pointer;
+}
+
+.middle h2 {
+  text-align: center;
+  width: 36px;
+  padding: auto;
+  padding-top: 5px;
+  border-radius: 50%;
+  /* margin-left: 10px; */
+  cursor: pointer;
+  background-color: #f1f1f1;
+}
+
+/* === RIGHT === */
+.nav-right button {
+  padding: 7px 15px;
+  border: none;
+  border-radius: 20px;
+  background-color: #f1f1f1;
+  font-weight: 500;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+
+.nav-right img {
+  width: 30px;
+  cursor: pointer;
+}
+
+.user_profile {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+h2.listening {
+  animation: pulse 1s infinite;
+  color: red;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(1); opacity: 0.8; }
+}
+
+
+/* === RESPONSIVE STYLING === */
+
+@media (max-width: 992px) {
+  .search-box input {
+    font-size: 14px;
+    min-width: 50px;
+  }
+
+  .notify{
+    display: none;
+  }
+
+  .user_profile {
+    width: 28px;
+    height: 28px;
+  }
+
+  form h2{
+    display: none;
+  }
+
+  .nav-right button,  /* hide "+ Create" */
+  .h2 {            /* hide voice icon */
+    display: none;
+  }
+
+  .logo {
+    width: 90px;
+  }
+}
+
+
