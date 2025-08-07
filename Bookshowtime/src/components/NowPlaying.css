@@ -1,0 +1,191 @@
+/* -------------------------
+   Now Playing Section
+-------------------------- */
+.now-playing-section {
+  position: relative;
+  padding: 3rem 0;
+  background: radial-gradient(circle at top, #2c2f39 0%, #1a1c22 100%);
+  color: white;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #fff;
+  position: relative;
+  font-weight: 600;
+}
+
+.section-title::after {
+  content: '';
+  width: 280px;
+  height: 4px;
+  background: #ff005c;
+  display: block;
+  margin: 0.2rem auto 0;
+  border-radius: 5px;
+}
+
+/* -------------------------
+   Slider and Scroll Styles
+-------------------------- */
+.slider-wrapper {
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.blur-left,
+.blur-right {
+  position: absolute;
+  top: 0;
+  width: 80px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.blur-left {
+  left: 0;
+  background: linear-gradient(to right, #1a1c22, transparent);
+}
+
+.blur-right {
+  right: 0;
+  background: linear-gradient(to left, #1a1c22, transparent);
+}
+
+.movie-scroll {
+  display: flex;
+  gap: 2rem;
+  animation: scrollMovies 40s linear infinite;
+  width: max-content;
+}
+
+/* -------------------------
+   Movie Card Styles
+-------------------------- */
+.movie-card {
+  flex: 0 0 260px;
+  background-color: #2b2e39;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  transition: box-shadow 0.3s ease, border 0.3s ease;
+}
+
+.movie-poster {
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.movie-card:hover .movie-poster {
+  transform: scale(1.08);
+}
+
+.movie-info {
+  padding: 1rem;
+}
+
+.movie-info h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #fff;
+  font-weight: 600;
+}
+
+.genres {
+  font-size: 0.85rem;
+  color: #bbb;
+  margin-top: 4px;
+}
+
+.meta {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.8rem;
+  color: #aaa;
+}
+
+/* -------------------------
+   Scroll Animation
+-------------------------- */
+@keyframes scrollMovies {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* -------------------------
+   Light Mode Enhancements
+-------------------------- */
+body.light .now-playing-section {
+  background: #f4f4f4;
+  color: #000;
+}
+
+body.light .section-title {
+  color: #000;
+}
+
+body.light .blur-left {
+  background: linear-gradient(to right, #f4f4f4, transparent);
+}
+
+body.light .blur-right {
+  background: linear-gradient(to left, #f4f4f4, transparent);
+}
+
+body.light .movie-card {
+  background-color: #ffffff;
+  color: #000;
+  border: 1px solid #e2e2e2;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+body.light .movie-info h3 {
+  color: #111;
+}
+
+body.light .genres {
+  color: #555;
+}
+
+body.light .meta {
+  color: #666;
+}
+
+/* filter buttons  */
+
+.filter-buttons {
+  display: flex;
+  gap: 10px;
+  margin: 2rem 0;
+  justify-content: center;
+}
+
+.filter-buttons button {
+  padding: 6px 14px;
+  font-size: 14px;
+  border: none;
+  border-radius: 20px;
+  background-color: #ddd;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.filter-buttons button.active {
+  background-color: #ff005c;
+  color: white;
+}
